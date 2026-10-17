@@ -4751,7 +4751,7 @@
       var io = new IntersectionObserver(function (es) {
         if (!es[0].isIntersecting) return;
         io.disconnect();
-        if (Sky.rm()) { el.textContent = prefix + target.toFixed(dec) + suffix; return; }
+        if (Sky.rm()) { el.textContent = prefix + (dec ? target.toFixed(dec) : Sky.fmtNum(Math.round(target))) + suffix; return; }
         var t0 = performance.now(), dur = 900;
         function tick(now) {
           var p = Math.min(1, (now - t0) / dur);
@@ -5703,7 +5703,23 @@
     },
     metric: function (v, k, note) {
       var sv = (v === null || v === undefined) ? '—' : String(v);
-      return '<div class="metric"><span class="metric-v roll-num" data-value="' + esc(sv.replace(/,/g, '')) + '">' + esc(sv) + '</span>' +
+      /* 只有「可选前缀 + 数字 + 可选后缀」这种形态才交给滚动动画。
+         以前把整串塞进 data-value、由 parseFloat 截断，单位与小数位会被吃掉：
+         '7,000B' 显示成 '7,000'、'1M' 显示成 '1'、'10.9' 显示成 '11'。
+         numberRoll 本来就支持 data-prefix / data-suffix / data-dec，这里补齐。
+         纯文字指标（'十万条'、'—'）不参与动画，直接原样渲染。 */
+      var m = /^([^\d]*)([\d][\d,]*(?:\.\d+)?)(.*)$/.exec(sv);
+      var span;
+      if (m) {
+        var num = m[2].replace(/,/g, '');
+        var dec = (num.split('.')[1] || '').length;
+        span = '<span class="metric-v roll-num" data-value="' + esc(num) + '"' +
+          ' data-prefix="' + esc(m[1]) + '" data-suffix="' + esc(m[3]) + '"' +
+          ' data-dec="' + dec + '">' + esc(sv) + '</span>';
+      } else {
+        span = '<span class="metric-v">' + esc(sv) + '</span>';
+      }
+      return '<div class="metric">' + span +
         '<span class="metric-k">' + esc(k) + '</span>' + (note ? '<span class="metric-note">' + esc(note) + '</span>' : '') + '</div>';
     },
     metrics: function (list) {
