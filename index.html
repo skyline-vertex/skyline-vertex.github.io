@@ -483,7 +483,7 @@
       { v: '246', k: '应用', note: '随系统内置，覆盖系统能力全场景' },
       { v: '111', k: 'Sky* 系统能力套件', note: '按 12 类归组，全部注册到统一清单' },
       { v: '22', k: '系统模块', note: '系统服务层的模块总数' },
-      { v: '13', k: '本地模型', note: '另可扩展 7B / 8B 级常用型号' }
+      { v: '3', k: '端侧模型', note: '可选下载合计 9.0 GB，不随镜像分发；另适配 13 种权重格式与 7B / 8B 级常用型号' }
     ],
     discipline: '我们不想给你一个"看起来很唬人、但经不起核对"的数字。数字可以大，但每一个都要能说清它是怎么来的。',
     rule: '如果一个功能带来的体积增加超过它的价值，那就不做。',
@@ -644,7 +644,7 @@
     media: {
       containers: 'MP4 / MOV / WebM / MKV / TS + 自研私有容器，只写三套封装器：MP4/MOV 同属 ISO BMFF（差别只是文件头品牌标识字段）；WebM/MKV 同属 EBML（差别只是声明字段 webm / matroska）；TS 切固定 188 字节小包、每包带同步标记。',
       benefit: '理解格式关系后格式转换常无需转码，只改字段重写索引即可把 MP4 变 MOV 且无损（转码必损）。',
-      tech: ['调色走计算着色器（不搬像素）', '导出优先硬件编码，比纯软件快 3–10×', '不支持新编码接口时干净地退回老录制接口'],
+      tech: ['调色走计算着色器（不搬像素）', '导出优先硬件编码，比纯软件快 3–10×', '不支持硬件编码接口时干净地退回软件编码'],
       verify: '写出的文件用系统播放器打开验证，不能播就逐字节对比十六进制。'
     },
     /* kernel (2.10) */
@@ -6223,7 +6223,7 @@
   route('/os/sythonos/compare/', std('SythonOS 版本对比', 'Turbo / Apex / pro 3.5 对比。',
     V.crumbs([['#/os/sythonos/', 'SythonOS'], ['#/os/sythonos/compare/', '版本对比']]) +
     V.hero('对比', '版本对比', '产品为列、维度为行；固定表头；差异高亮。') +
-    '<section class="section"><div class="tbl-wrap"><table class="tbl"><caption>SythonOS 世代对比（同一台车的口径）</caption>' +
+    '<section class="section"><div class="tbl-wrap"><table class="tbl"><caption>SythonOS 世代对比（同一台参考机的口径）</caption>' +
     '<thead><tr><th class="tbl-lock">维度</th><th>Turbo（当前）</th><th>Apex</th><th>pro 3.5</th></tr></thead><tbody>' +
     [['主干代码行数', '2,384 万', '1,420 万', '786 万'],
      ['定位', '为真实硬件而生', '还了临时方案的债', '成熟形态'],
