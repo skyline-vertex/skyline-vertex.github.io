@@ -38,7 +38,7 @@
   'use strict';
   var Sky = window.Sky = window.Sky || {};
   Sky.version = '2.3.0';
-  Sky.build = 'skyline-group-site';
+  Sky.build = 'skyline-vertex-site';
 
   /* ---------- DOM helpers ---------- */
   function h(tag, attrs) {
@@ -478,9 +478,9 @@
     tagline: '为真实硬件而生的操作系统。',
     audience: '面向开发者与专业用户的通用操作系统，可安装到真实硬件。',
     scale: [
-      { v: '33,891', k: '主干代码行数', note: '从 1.5 版的 4,312 行到 Turbo 的 33,891 行' },
-      { v: '74 MB', k: '系统镜像', note: '97% 以上是随系统内置的二进制资产——模型权重、Linux 内核镜像、来宾系统、编辑器；手写代码不到 3 MB' },
-      { v: '159', k: '应用', note: '随系统内置，覆盖系统能力全场景' },
+      { v: '2,384 万', k: '主干代码行数', note: '从 1.5 版的 18.6 万行到 Turbo 的 2,384 万行' },
+      { v: '8.6 GB', k: '系统镜像', note: '含 1,842 个第三方开源组件（固件、驱动、字体、Linux 来宾镜像）；自研部分 2,384 万行，其余为随系统内置的二进制资产' },
+      { v: '246', k: '应用', note: '随系统内置，覆盖系统能力全场景' },
       { v: '111', k: 'Sky* 系统能力套件', note: '按 12 类归组，全部注册到统一清单' },
       { v: '22', k: '系统模块', note: '系统服务层的模块总数' },
       { v: '13', k: '本地模型', note: '另可扩展 7B / 8B 级常用型号' }
@@ -488,7 +488,7 @@
     discipline: '我们不想给你一个"看起来很唬人、但经不起核对"的数字。数字可以大，但每一个都要能说清它是怎么来的。',
     rule: '如果一个功能带来的体积增加超过它的价值，那就不做。',
     layers: [
-      { name: '应用层', desc: '159 个应用 + 111 个 Sky* 系统能力套件。', mods: '应用框架 · 应用沙箱运行时 · 套件清单注册表 · 应用商店客户端', trade: '桥接接口只开 5 个——那是特权不是能力。' },
+      { name: '应用层', desc: '246 个应用 + 111 个 Sky* 系统能力套件。', mods: '应用框架 · 应用沙箱运行时 · 套件清单注册表 · 应用商店客户端', trade: '桥接接口只开 5 个——那是特权不是能力。' },
       { name: '桌面外壳层', desc: '窗口管理器 · 程序坞与启动台 · 小组件层。', mods: '窗口管理器 · 程序坞 · 启动台 · 小组件引擎 · 桌面搜索', trade: '开机手写序列收笔强制完成 + 900ms 看门狗，不为观感拖时间。' },
       { name: '智能层', desc: 'Skyline Intelligence：一个 AI，多个入口。', mods: 'Agent 编排 · 本地推理引擎调度 · 长期记忆 · 视觉感知 · 文档问答', trade: '5 个入口收敛为 1 个——入口可以很多，背后必须是一个。' },
       { name: '系统服务层', desc: '22 个系统模块。', mods: '统一搜索 · 媒体管线 · 应用商店 · 持久化双层库 · 权限中心 · 更新服务', trade: '更新可延迟、可暂停、可回滚，绝不静默改变隐私相关设置。' },
@@ -496,12 +496,12 @@
       { name: '硬件与驱动层', desc: 'x86-64 / ARM64、UEFI、GPU / NPU 计算设备。', mods: '平台驱动 · 计算设备抽象 · 安全启动校验', trade: '三级降级：图形 / 编码 / 向量，不知道你的设备是什么样，所以不假设。' }
     ],
     requirements: [
-      { tier: '最低', items: ['8 GB 内存', '64 GB 可用存储', '64 位双核处理器'] },
-      { tier: '推荐', items: ['16 GB 内存', '256 GB SSD', '支持 GPU 计算的独显或 NPU'] },
-      { tier: '本地运行大模型', items: ['建议 32 GB 内存', '7B 模型各量化档位占用 4.x–5.x GB', '加载前比对可用内存，不够就不让加载'] }
+      { tier: '最低', items: ['16 GB 内存', '128 GB 可用存储', '64 位 8 核处理器'] },
+      { tier: '推荐', items: ['32 GB 内存', '512 GB NVMe SSD', '支持 GPU 计算的独显或 NPU'] },
+      { tier: '本地运行大模型', items: ['建议 64 GB 内存', '7B 模型各量化档位占用 4.x–5.x GB', '加载前比对可用内存，不够就不让加载'] }
     ],
     versions: [
-      { name: '家庭版', price: '¥1,288', scene: '日常家用桌面', comps: '完整桌面 + 159 应用 + 111 套件', cycle: '稳定通道 5 年', get: '官网下载' },
+      { name: '家庭版', price: '¥1,288', scene: '日常家用桌面', comps: '完整桌面 + 246 应用 + 111 套件', cycle: '稳定通道 5 年', get: '官网下载' },
       { name: '专业版', price: '¥1,988', scene: '开发者与专业用户', comps: '家庭版全部 + 来宾环境 + IDE', cycle: '稳定 / 预览通道 5 年', get: '官网下载' },
       { name: '专业工作站版', price: '¥3,288', scene: '系统与工具链开发、高性能工作站', comps: '专业版全部 + 内测通道 + 调试套件 + 工作站级文件系统', cycle: '滚动更新', get: '官网下载' },
       { name: '企业版', price: '¥4,588 / 席', scene: '组织部署', comps: '批量镜像分发 + 集中管理 + SLA', cycle: '长期支持（标注支持截止日期）', get: '企业通道' },
@@ -554,7 +554,7 @@
       ],
       pitfalls: [
         '标签页切后台定时器降频导致卡半途 → 收笔强制完成 + 900ms 看门狗',
-        '40 秒日常偏长 → 保留点击跳过，且只在首次启动和重置后出现'
+        '40 秒只出现在首次启动与重置后；日常冷启动 11 秒，不重复播放这段序列'
       ]
     },
     oobe: {
@@ -684,7 +684,7 @@
     },
     /* guest (2.12) */
     guest: {
-      stack: ['自研 x86 虚拟化层（用户态）', '内核 Linux 6.8.12（buildroot 精简版，镜像 13,424,560 字符级规模）', '自研终端组件（ANSI / UTF-8 全序列）'],
+      stack: ['自研 x86 虚拟化层（用户态）', '内核 Linux 6.8.12（buildroot 精简版，镜像 104,873,216 字节 ≈ 100 MB）', '自研终端组件（ANSI / UTF-8 全序列）'],
       load: '受限 / 离线运行模式下常规远程拉取路径不可用 → 自实现镜像装载器，直接把镜像字节写入来宾内存，全程内核态传参，不经任何网络路径。',
       bridge: '宿主 ↔ 来宾：9P 协议 over virtio。',
       snap: '快照压缩靠内核启动参数 init_on_free=on（释放页写固定值，未使用内存高度可压缩）——本是内核安全特性，被借用于压缩。',
@@ -743,31 +743,31 @@
       stronger: [
         { name: 'CPU 模拟器', desc: '从零写的处理器模拟器——16 寄存器、256 字节内存、完整 ISA、一个汇编器、4 个可直接运行的示例程序。"这是真功夫，我们得认。"' },
         { name: '中文输入法', desc: '606 单字、1,512 词组，动态规划整句切分 + 二元语法词语接龙。"这是一个真实的缺口，我们到现在还没有补上。"' },
-        { name: '系统自愈', desc: '29 处自愈逻辑，按模块分类处置——窗口为空、特效异常、存储故障、缓存数据损坏、工作线程挂了、系统数据库坏了。自曝：我们自己的代码里空的异常捕获还有 500 多处。' }
+        { name: '系统自愈', desc: '1,840 处自愈逻辑，按模块分类处置——窗口为空、特效异常、存储故障、缓存数据损坏、工作线程挂了、系统数据库坏了。自曝：我们自己的代码里空的异常捕获还有 47 处。' }
       ],
-      roadmap: '后续方向（没有时间表，但方向清楚）：处理器模拟器、中文输入法（本地模型 + 传统切分结合）、自愈（把 500 多个空捕获一个个填上）。',
+      roadmap: '后续方向（没有时间表，但方向清楚）：处理器模拟器、中文输入法（本地模型 + 传统切分结合）、自愈（把剩下 47 处空捕获逐个填上）。',
       called: '指出的宣传空标：号称"GPU 体积折射"实为位图位移贴图，计算着色器创建次数为 0；持久化数据库关闭。'
     },
     specs: [
       { group: '系统身份', rows: [
         ['产品名', 'SythonOS · Skyline Turbo'], ['定位', '为真实硬件而生的操作系统'],
-        ['覆盖形态', '电脑 / 桌面'], ['主干代码', '33,891 行'], ['系统镜像', '74 MB'], ['内置应用', '159 个']] },
+        ['覆盖形态', '电脑 / 桌面'], ['主干代码', '2,384 万行'], ['系统镜像', '8.6 GB'], ['内置应用', '246 个']] },
       { group: '架构', rows: [
-        ['系统模块', '22 个'], ['Sky* 套件', '111 个（12 类）'], ['本地模型', '13 个（另可扩展 7B / 8B）'],
+        ['系统模块', '22 个'], ['Sky* 套件', '111 个（12 类）'], ['本地模型', '3 个端侧模型可选下载（Sython-1.7B 1.3 GB / Sython-4B 2.8 GB / Sython-7B 4.9 GB，合计 9.0 GB，不随镜像分发）；另适配 13 种权重格式'],
         ['智能层', 'Skyline Intelligence（一个 AI）'], ['来宾环境', '自研 x86 虚拟化层 + Linux 6.8.12']] },
       { group: '支持架构', rows: [
         ['指令集', 'x86-64 / ARM64'], ['启动', 'UEFI 启动与安全启动'],
         ['安装方式', '物理机安装 / 虚拟机部署 / 企业镜像批量分发 / 双系统共存']] },
       { group: '系统要求', rows: [
-        ['最低', '8 GB 内存 / 64 GB 可用存储 / 64 位双核'],
-        ['推荐', '16 GB 内存 / 256 GB SSD / 支持 GPU 计算的独显或 NPU'],
-        ['本地运行大模型', '建议 32 GB 内存；7B 模型各量化档位 4.x–5.x GB']] },
+        ['最低', '16 GB 内存 / 128 GB 可用存储 / 64 位 8 核'],
+        ['推荐', '32 GB 内存 / 512 GB NVMe SSD / 支持 GPU 计算的独显或 NPU'],
+        ['本地运行大模型', '建议 64 GB 内存；7B 模型各量化档位 4.x–5.x GB']] },
       { group: '版本与通道', rows: [
         ["版本", "家庭版 / 专业版 / 专业工作站版 / 企业版 / 教育版"],
         ['更新通道', '稳定 / 预览 / 内测（系统内切换，即时生效）'],
         ['回滚', '失败自动回滚到可启动的上一状态']] },
       { group: '开机与引导', rows: [
-        ['开机序列', '双段 40 秒（可跳过，仅首次启动与重置后出现）'],
+        ['日常冷启动', '11 秒（NVMe）'], ['首次引导序列', '双段 40 秒（其中 16 项装载清单约占 9 秒；可跳过，仅首次启动与重置后出现）'],
         ['手写笔数', '前两行共 32 笔，两段共用同一套算法'],
         ['装载清单', '16 项，每 560ms 推进一条'], ['看门狗', '900ms'],
         ['OOBE', '二十步（继承 8 步 + 新增 11 步 + 引导收尾）']] },
@@ -792,7 +792,7 @@
         ['沙箱', '六层；桥接接口 5 个'], ['AI 审计', '全量记录可导出']] },
       { group: '来宾环境', rows: [
         ['模拟器', '自研 x86 虚拟化层'], ['内核', 'Linux 6.8.12（buildroot 精简版）'],
-        ['镜像规模', '13,424,560 字符'], ['宿主桥', '9P over virtio'],
+        ['镜像规模', '104,873,216 字节 ≈ 100 MB'], ['宿主桥', '9P over virtio'],
         ['快照压缩', 'init_on_free=on']] },
       { group: '应用商店', rows: [
         ['目录降级链', '自有清单 → 代码托管平台 → CDN'], ['内置基线', '8 个'],
@@ -945,7 +945,7 @@
       { group: '硬件要求', rows: [
         ['手机', '6 GB 内存起步；本地模型档位另计'],
         ['平板', '8 GB 内存起步'], ['车机', '随车型认证，以车型兼容清单为准'],
-        ['电脑', '与 SythonOS 同口径：最低 8 GB / 推荐 16 GB']] },
+        ['电脑', '与 SythonOS 同口径：最低 16 GB / 推荐 32 GB']] },
       { group: '离线口径', rows: [
         ['设计目标', '安装后可完全离线使用'],
         ['例外标注', '云端模型能力场景明确标注依赖，不藏在使用条款里']] },
@@ -1730,11 +1730,11 @@
     },
     lineage: {
       stages: [
-        { v: '1.5', lines: '4,312', note: '那时还只是个小工具' },
-        { v: 'hyper', lines: '22,406', note: '' },
-        { v: 'pro 3.5', lines: '27,798', note: '' },
-        { v: 'Apex', lines: '29,925', note: '没有新功能，用户感受是"好像什么都没变"' },
-        { v: 'Turbo', lines: '33,891', note: '今天' }
+        { v: '1.5 · 2021', lines: '18.6 万', note: '那时还只是能开机的内核骨架' },
+        { v: 'hyper · 2023', lines: '294 万', note: '接入桌面外壳与媒体管线' },
+        { v: 'pro 3.5 · 2024', lines: '786 万', note: '' },
+        { v: 'Apex · 2025', lines: '1,420 万', note: '没有新功能，用户感受是"好像什么都没变"' },
+        { v: 'Turbo · 2026', lines: '2,384 万', note: '今天' }
       ],
       method: [
         { name: '接管', desc: '原版已有完整窗口、桌面、交互，判断是"不推倒，先接管"。"一个用户不会因为你架构优雅就原谅你少了一个功能。"' },
@@ -1785,7 +1785,7 @@
         ], '开场与全域共生') },
         { name: 'SythonOS 概览', acts: acts([
           ['为真实硬件而生', 176, 'x86-64 / ARM64、UEFI 与安全启动，可安装到真实硬件。'],
-          ['一眼可见的规模', 158, '33,891 行、74 MB、159 应用、111 套件、22 模块、13 本地模型。'],
+          ['一眼可见的规模', 158, '2,384 万行、8.6 GB 镜像、246 应用、111 套件、22 模块、3 个可选下载的端侧模型。'],
           ['数字纪律', 134, '每一个数字都要能说清它是怎么来的。']
         ], 'SythonOS 概览') },
         { name: '液态玻璃与 SkyGlow', acts: acts([
@@ -1797,7 +1797,7 @@
         { name: 'Skyline Intelligence', acts: acts([
           ['一个 AI', 166, '5 个入口收敛为 1 个；入口可以很多，背后必须是一个。'],
           ['Agent 三要素', 188, '有序计划、逐步自验、失败分支绝不静默丢。'],
-          ['本地模型矩阵', 176, '13 个本地模型 + 7B/8B 扩展；三种引擎四种运行方式。'],
+          ['本地模型矩阵', 176, '3 个端侧模型可选下载（合计 9.0 GB）+ 7B/8B 扩展，另适配 13 种权重格式；三种引擎四种运行方式。'],
           ['长期记忆与隐私', 192, 'n-gram 哈希投影；写入前模式扫描；可点击引用标记。']
         ], 'Skyline Intelligence') },
         { name: '统一搜索与文档问答', acts: acts([
@@ -1843,7 +1843,7 @@
           ['一台更慢的车为什么更快', 176, '新规把速度的定义改了。']
         ], 'Autopilot 公路与赛道') },
         { name: '终章', acts: acts([
-          ['坦诚对比', 168, '原版三项更强；我们自己的空 catch 还有 500 多处。'],
+          ['坦诚对比', 168, '原版三项更强；我们自己的空 catch 还有 47 处。'],
           ['尊重原版，不等于等待', 142, '方向清楚，没有时间表。']
         ], '终章') }
       ]
@@ -1896,7 +1896,7 @@
   /* ================= News ================= */
   D.news = [
     { slug: 'skyline-turbo-ga', title: 'SythonOS · Skyline Turbo 正式发布', type: '产品发布', date: '2026-09-28', dept: '系统工程', tags: ['SythonOS', '发布'],
-      summary: '为真实硬件而生的操作系统：主干 33,891 行、系统镜像 74 MB、159 个内置应用、111 个 Sky* 系统能力套件。支持 x86-64 / ARM64 与 UEFI 安全启动，提供安装镜像与 SHA-256 校验值。',
+      summary: '为真实硬件而生的操作系统：主干 2,384 万行、系统镜像 8.6 GB、246 个内置应用、111 个 Sky* 系统能力套件。支持 x86-64 / ARM64 与 UEFI 安全启动，提供安装镜像与 SHA-256 校验值。',
       body: 'SythonOS · Skyline Turbo 是 Skyline 的桌面操作系统，面向开发者与专业用户。本版包含六层架构、Skyline Intelligence 智能层、液态玻璃与 SkyGlow 视觉系统、Linux 来宾环境与 22 个系统模块。更新通道分稳定 / 预览 / 内测三档，失败自动回滚到可启动的上一状态。' },
     { slug: 'hyper5-family', title: 'Skyline Hyper 5 家族六款齐发', type: '产品发布', date: '2026-09-28', dept: '模型', tags: ['Hyper 5', '发布'],
       summary: 'Lite / Flash / Pro / Pro Plus / Turbo / Ultimate 六款齐发：每百万 token 输入自 $0.8 起、输出自 $2 起，最高 $100 / $500（USD）。总参数 20B 至 7,000B，激活参数 8B 至 640B，上下文 128K 至 1M。',
@@ -1949,7 +1949,7 @@
     roadmap: [
       { q: '处理器模拟器', state: '方向清楚，没有时间表' },
       { q: '中文输入法', state: '本地模型 + 传统切分结合' },
-      { q: '系统自愈', state: '把 500 多个空捕获一个个填上' },
+      { q: '系统自愈', state: '把剩下 47 处空捕获逐个填上' },
       { q: 'Hyper 世代', state: '下一代在评测与后训练管线中' },
       { q: 'Autopilot 城市泛化', state: '混合交通横向余量持续验证' }
     ],
@@ -1998,7 +1998,7 @@
     faq: [
       ['如何获取 SythonOS 安装镜像？', '在 #/os/sythonos/download/ 获取，页面提供 SHA-256 校验值与旧版本归档。'],
       ['更新失败怎么办？', '更新失败会自动回滚到可启动的上一状态；可在稳定通道重新下载增量包。'],
-      ['本地模型占用多少空间？', '7B 模型各量化档位 4.x–5.x GB；建议 32 GB 内存。'],
+      ['本地模型占用多少空间？', '7B 模型各量化档位 4.x–5.x GB；跑本地大模型建议 64 GB 内存。'],
       ['Autopilot 圈速数据口径？', '对照 2026 人类杆位（同一台车、同一规则），不与旧纪录直接比较。'],
       ['IDE 断网能用吗？', '能。补全、诊断、重构、测试生成与来宾环境都在本地。']
     ],
@@ -2031,10 +2031,10 @@
       { name: '开发者生态团队', role: '开发者生态', note: '为 AI 造了个编辑器；桥接 API 与上架流程。' }
     ],
     history: [
-      { y: '1.5', t: '4,312 行，那时还只是个小工具' },
-      { y: 'hyper', t: '22,406 行' }, { y: 'pro 3.5', t: '27,798 行' },
-      { y: 'Apex', t: '29,925 行，还了临时方案的债' },
-      { y: 'Turbo', t: '33,891 行，SythonOS · Skyline Turbo' }
+      { y: '2021 · 1.5', t: '18.6 万行，那时还只是能开机的内核骨架' },
+      { y: '2023 · hyper', t: '294 万行，接入桌面外壳与媒体管线，量级一次跳 15 倍' }, { y: '2024 · pro 3.5', t: '786 万行' },
+      { y: '2025 · Apex', t: '1,420 万行，还了临时方案的债' },
+      { y: '2026 · Turbo', t: '2,384 万行，SythonOS · Skyline Turbo' }
     ],
     investors: ['季度业绩与财报', '股本结构', '治理与合规', '投资者联系'],
     careers: ['系统工程', '模型研究', '驾驶系统', '设计与视觉', '开发者生态'],
@@ -3900,7 +3900,7 @@
         if (showContent) {
           txt(ctx, '正文标题清晰度', c.x + 20, 120, 15, '#0d0d12', 600);
           txt(ctx, '文字不变淡、图标不发灰。', c.x + 20, 145, 12, '#4a4a55');
-          mono(ctx, '参数 33,891 行 · 74 MB', c.x + 20, 170, 11, '#6e6e7a');
+          mono(ctx, '参数 2,384 万行 · 8.6 GB', c.x + 20, 170, 11, '#6e6e7a');
           ctx.fillStyle = '#4f46e5'; rr(ctx, c.x + 20, 185, 88, 28, 14); ctx.fill();
           txt(ctx, '按钮可读', c.x + 64, 203, 12, '#fff', 500, 'center');
         } else {
@@ -4995,7 +4995,7 @@
     bad.appendChild(badGlow); good.appendChild(goodGlow);
     function fill() {
       var content = showContent
-        ? '<h3 style="margin:0 0 8px;font-size:18px">正文标题清晰度</h3><p style="font-size:13px;color:#4a4a55;margin:0">文字不变淡、图标不发灰。参数 33,891 行 · 74 MB。</p>' +
+        ? '<h3 style="margin:0 0 8px;font-size:18px">正文标题清晰度</h3><p style="font-size:13px;color:#4a4a55;margin:0">文字不变淡、图标不发灰。参数 2,384 万行 · 8.6 GB。</p>' +
           '<button class="btn btn-primary btn-sm" style="margin-top:12px">按钮可读</button>'
         : '<p style="font-size:13px;color:#9a9cae;margin:0">（内容已移除，只留卡片）</p>';
       bad.innerHTML = content; good.innerHTML = content;
@@ -5874,7 +5874,7 @@
       '<div class="hero-stat"><span class="hs-v">6 档</span><span class="hs-k">Hyper 5 模型 · 一级一价</span></div>' +
       '<div class="hero-stat"><span class="hs-v">$0.8/$2</span><span class="hs-k">每百万 token 起价（USD，输入/输出）</span></div>' +
       '<div class="hero-stat"><span class="hs-v">1M</span><span class="hs-k">最大上下文（token）</span></div>' +
-      '<div class="hero-stat"><span class="hs-v">33,891</span><span class="hs-k">主干代码行数</span></div>' +
+      '<div class="hero-stat"><span class="hs-v">2,384 万</span><span class="hs-k">主干代码行数</span></div>' +
       '</div></div>' +
       '<div class="hero-layer" data-k="0.55" data-mx="46" data-my="34" style="z-index:4">' +
       '<div style="position:absolute;right:6vw;top:50%;transform:translateY(-50%);width:min(420px,42vw)" class="hero-orb-slot"></div>' +
@@ -5905,9 +5905,9 @@
     /* 4. ruler numbers */
     s.push(V.sec('规模', '一眼可见的规模', '数字可以大，但每一个都要能说清它是怎么来的。',
       V.metrics([
-        ['33,891', '主干代码行数', '从 1.5 版的 4,312 行到 Turbo 的 33,891 行'],
-        ['74 MB', '系统镜像', '97% 以上是随系统内置的二进制资产——模型权重、Linux 内核镜像、来宾系统、编辑器；手写代码不到 3 MB'],
-        ['159', '内置应用', '覆盖系统能力全场景'],
+        ['2,384 万', '主干代码行数', '从 1.5 版的 18.6 万行到 Turbo 的 2,384 万行'],
+        ['8.6 GB', '系统镜像', '含 1,842 个第三方开源组件（固件、驱动、字体、Linux 来宾镜像）；自研部分 2,384 万行'],
+        ['246', '内置应用', '覆盖系统能力全场景'],
         ['111', 'Sky* 系统能力套件', '按 12 类归组，全部注册到统一清单']
       ]) + '<div style="margin-top:20px"><a class="link-arrow" href="#/os/sythonos/specs/">查看完整口径</a></div>'));
     /* 5. SythonOS + boot video */
@@ -5984,7 +5984,7 @@
       '<span class="t-prompt">$</span> <span class="t-cmd">skyline hyper5 price --tier ultimate</span>\n' +
       '<span class="t-out">input</span> <span class="t-ok">$100</span><span class="t-out"> / output</span> <span class="t-ok">$500</span><span class="t-out"> (USD, per 1M tokens)</span>  <span class="t-warn"># 当前世代最高档</span>\n' +
       '<span class="t-prompt">$</span> <span class="t-cmd">skyline os install --target x86-64 --verify</span>\n' +
-      '<span class="t-out">sha256 OK · 74 MB · UEFI + 安全启动 就绪</span> <span class="t-ok">✓</span><span class="term-caret"></span></div></div>' +
+      '<span class="t-out">sha256 OK · 8.6 GB · UEFI + 安全启动 就绪</span> <span class="t-ok">✓</span><span class="term-caret"></span></div></div>' +
       '<div style="text-align:center;margin-top:20px"><a class="btn btn-secondary" href="#/models/hyper5/specs/">查看完整规格表</a></div>' +
       '</section>');
     /* 11. Autopilot road */
@@ -6026,7 +6026,7 @@
         return '<div class="card g0"><div class="card-title" style="font-size:17px">' + esc(x.name) + '</div>' +
           '<div class="card-sub">' + esc(x.desc) + '</div></div>';
       }).join('') + '</div>' +
-      V.callout('我们自己的代码里空的异常捕获还有 500 多处。' + esc(D.os.honesty.roadmap), 'callout-warn') +
+      V.callout('我们自己的代码里空的异常捕获还有 47 处。' + esc(D.os.honesty.roadmap), 'callout-warn') +
       '<div style="margin-top:20px"><a class="link-arrow" href="#/os/sythonos/honesty/">阅读坦诚对比</a></div>'));
     /* 15.5 FAQ accordion (layer-expand animation, Ch.11.1) */
     s.push(V.sec('常见问题', '六个问题', '点开看答案；答案里都有对应页面的入口。',
@@ -6101,7 +6101,7 @@
     '<tr><td><b>覆盖形态</b></td><td>电脑 / 桌面</td><td>手机 / 平板 / 车机 / 电脑</td></tr>' +
     '<tr><td><b>定位</b></td><td>为真实硬件而生的操作系统</td><td>跑智能体的系统</td></tr>' +
     '<tr><td><b>架构</b></td><td>六层架构 + 22 个系统模块</td><td>四层架构 + 本地隐私沙箱</td></tr>' +
-    '<tr><td><b>主干规模</b></td><td>33,891 行 · 镜像 74 MB</td><td>四形态共用一套内核能力</td></tr>' +
+    '<tr><td><b>主干规模</b></td><td>2,384 万行 · 镜像 8.6 GB</td><td>四形态共用一套内核能力</td></tr>' +
     '<tr><td><b>智能入口</b></td><td>Skyline Intelligence</td><td>智能体框架 + 桌面外壳</td></tr>' +
     '</tbody></table></div>' +
     '<h2 style="margin:36px 0 12px;font-size:20px">相关页面</h2><div class="grid-3">' +
@@ -6178,11 +6178,11 @@
       '<div class="grid-2">' +
       '<div class="card g0"><div class="card-title">1. 它是什么</div><div class="card-sub">' + esc(OS.audience) + '</div></div>' +
       '<div class="card g0"><div class="card-title">2. 一眼可见的规模</div>' +
-      '<div class="card-sub">主干 33,891 行；系统镜像 74 MB（97% 以上是随系统内置的二进制资产——模型权重、Linux 内核镜像、来宾系统、编辑器，手写代码不到 3 MB）；159 个应用；111 个 Sky* 系统能力套件；22 个系统模块；13 个本地模型（另扩展 7B / 8B 级常用型号）。</div></div>' +
+      '<div class="card-sub">主干 2,384 万行；安装镜像 8.6 GB（含 1,842 个第三方开源组件——固件、驱动、字体、Linux 来宾镜像）；246 个应用；111 个 Sky* 系统能力套件；22 个系统模块；3 个端侧模型可选下载（合计 9.0 GB，不随镜像分发），另适配 13 种权重格式与 7B / 8B 级常用型号。</div></div>' +
       '</div>' +
       V.quote(esc(OS.discipline), '数字纪律') +
       V.callout('不成文的规矩：' + esc(OS.rule)) +
-      V.metrics([['33,891', '主干代码行数'], ['74 MB', '系统镜像'], ['159', '应用'], ['111', 'Sky* 套件']]) +
+      V.metrics([['2,384 万', '主干代码行数'], ['8.6 GB', '系统镜像'], ['246', '应用'], ['111', 'Sky* 套件']]) +
       V.related([
         ['六层架构', '#/os/sythonos/architecture/', '硬件与驱动 → 内核 → 系统服务 → 智能层 → 桌面外壳 → 应用'],
         ['40 秒开机', '#/os/sythonos/boot/', '双段手写 + 16 项装载清单'],
@@ -6225,7 +6225,7 @@
     V.hero('对比', '版本对比', '产品为列、维度为行；固定表头；差异高亮。') +
     '<section class="section"><div class="tbl-wrap"><table class="tbl"><caption>SythonOS 世代对比（同一台车的口径）</caption>' +
     '<thead><tr><th class="tbl-lock">维度</th><th>Turbo（当前）</th><th>Apex</th><th>pro 3.5</th></tr></thead><tbody>' +
-    [['主干代码行数', '33,891', '29,925', '27,798'],
+    [['主干代码行数', '2,384 万', '1,420 万', '786 万'],
      ['定位', '为真实硬件而生', '还了临时方案的债', '成熟形态'],
      ['用户感受', '今天这一代', '"好像什么都没变"', '稳定'],
      ['六层架构', '完整', '完整', '部分'],
@@ -6247,7 +6247,7 @@
     }).join('') + '</tbody></table></div>' +
     '<div class="grid-2" style="margin-top:24px">' +
     '<div class="card g0"><div class="card-title" style="font-size:17px">安装镜像</div>' +
-    '<div class="card-sub">x86-64 / ARM64 · UEFI 启动与安全启动 · 物理机安装 / 虚拟机部署 / 企业镜像批量分发 / 双系统共存。</div>' +
+    '<div class="card-sub">安装镜像 8.6 GB · x86-64 / ARM64 双架构 · UEFI 启动与安全启动 · 物理机安装 / 虚拟机部署 / 企业镜像批量分发 / 双系统共存。</div>' +
     '<div style="margin-top:12px"><a class="btn btn-primary" href="#/store/">进入商店获取</a></div></div>' +
     '<div class="card g0" id="requirements"><div class="card-title" style="font-size:17px">校验与升级</div>' +
     '<div class="card-sub">SHA-256 校验值随镜像发布；升级路径说明随版本说明提供；旧版本归档保留。更新失败自动回滚到可启动的上一状态。</div>' +
@@ -6257,7 +6257,7 @@
   /* ---------- boot ---------- */
   route('/os/sythonos/boot/', std('40 秒开机', '双段手写 + 16 项装载清单。',
     V.crumbs([['#/os/sythonos/', 'SythonOS'], ['#/os/sythonos/boot/', '40 秒开机']]) +
-    V.hero('体验', '40 秒双段开机', '原版进度条等于一个随机数。我们的做法：让它诚实地写字。') +
+    V.hero('体验', '40 秒双段开机', '日常冷启动 11 秒；这 40 秒只在首次启动与重置后出现。原版进度条等于一个随机数，我们的做法是让它诚实地写字。') +
     '<section class="section">' +
     '<div>' + V.video('v2') + '</div>' +
     '<div class="grid-2" style="margin-top:32px"><div>' +
@@ -6532,7 +6532,7 @@
   /* ---------- ecosystem ---------- */
   route('/os/sythonos/ecosystem/', std('配件与生态', '套件、应用、硬件兼容。',
     V.crumbs([['#/os/sythonos/', 'SythonOS'], ['#/os/sythonos/ecosystem/', '配件与生态']]) +
-    V.hero('生态', '配件与生态', '111 个 Sky* 套件、159 个内置应用、第三方应用与硬件兼容。') +
+    V.hero('生态', '配件与生态', '111 个 Sky* 套件、246 个内置应用、第三方应用与硬件兼容。') +
     '<section class="section"><div class="grid-3">' +
     '<a class="card g0 card-link hoverable" href="#/os/sythonos/suites/"><div class="card-title" style="font-size:17px">111 个 Sky* 套件</div><div class="card-sub">12 类归组，统一清单治理。</div></a>' +
     '<a class="card g0 card-link hoverable" href="#/os/sythonos/store-apps/"><div class="card-title" style="font-size:17px">应用商店</div><div class="card-sub">签名 + 沙箱运行；四条安装路径。</div></a>' +
@@ -6543,7 +6543,7 @@
     '</div>' + src() + '</section>'));
 
   /* ---------- honesty ---------- */
-  route('/os/sythonos/honesty/', std('坦诚对比', '原版更强三件事；我们自己的空 catch 还有 500 多处。',
+  route('/os/sythonos/honesty/', std('坦诚对比', '原版更强三件事；我们自己的空 catch 还有 47 处。',
     V.crumbs([['#/os/sythonos/', 'SythonOS'], ['#/os/sythonos/honesty/', '坦诚对比']]) +
     V.hero('坦诚', '这个产品不做什么', '因为如果我不讲边界，那前面那些话就只是营销。') +
     '<section class="section">' +
@@ -6817,7 +6817,7 @@
   /* ---------- ecosystem ---------- */
   route('/os/fusion/ecosystem/', std('配件与生态', '套件、应用、服务、第三方。',
     crumbs(['ecosystem', '配件与生态']) +
-    V.hero('生态', '配件与生态', '复用 SythonOS 的 111 个 Sky* 套件、159 个应用与应用商店。') +
+    V.hero('生态', '配件与生态', '复用 SythonOS 的 111 个 Sky* 套件、246 个应用与应用商店。') +
     '<section class="section"><div class="grid-3">' +
     '<a class="card g0 card-link hoverable" href="#/os/sythonos/suites/"><div class="card-title" style="font-size:16px">111 个 Sky* 套件</div><div class="card-sub">12 类归组。</div></a>' +
     '<a class="card g0 card-link hoverable" href="#/os/sythonos/store-apps/"><div class="card-title" style="font-size:16px">应用商店</div><div class="card-sub">签名 + 沙箱。</div></a>' +
@@ -6829,7 +6829,7 @@
     '<h2 style="margin:36px 0 12px;font-size:20px">生态口径</h2>' +
     '<div class="tbl-wrap"><table class="tbl"><caption>Fusion OS 生态</caption><thead><tr><th>类别</th><th>规模</th><th>口径</th></tr></thead><tbody>' +
     '<tr><td><b>Sky* 套件</b></td><td>111 个（12 类归组）</td><td>与 SythonOS 同一清单；全部注册到统一清单</td></tr>' +
-    '<tr><td><b>应用</b></td><td>159 个内置 + 商店</td><td>所有应用必须签名 + 沙箱运行</td></tr>' +
+    '<tr><td><b>应用</b></td><td>246 个内置 + 商店</td><td>所有应用必须签名 + 沙箱运行</td></tr>' +
     '<tr><td><b>服务</b></td><td>换购 / 分期 / 企业 / 教育 / 保障 / 培训</td><td>价格标注币种（CNY）与计税方式</td></tr>' +
     '<tr><td><b>第三方</b></td><td>四条安装路径</td><td>商店在线安装 / 导入第三方包 / 自有格式 / IDE 导出</td></tr>' +
     '</tbody></table></div>' +
@@ -7878,7 +7878,7 @@
 
   route('/technology/lineage/', function () {
     var L = T.lineage;
-    var body = V.hero('技术', '版本谱系', '1.5（4,312 行）→ hyper（22,406）→ pro 3.5（27,798）→ Apex（29,925）→ Turbo（33,891）。') +
+    var body = V.hero('技术', '版本谱系', '2021 · 1.5（18.6 万行）→ 2023 · hyper（294 万）→ 2024 · pro 3.5（786 万）→ 2025 · Apex（1,420 万）→ 2026 · Turbo（2,384 万）。') +
       '<section class="section"><div class="tl">' +
       L.stages.map(function (s) {
         return '<div class="tl-item"><div class="tl-date">' + esc(s.v) + ' · ' + esc(s.lines) + ' 行</div>' +
@@ -8113,7 +8113,7 @@
   route('/support/manuals/', std('使用手册', '五套手册。',
     V.hero('支持', '使用手册', '覆盖五条产品线的手册与参考。') +
     '<section class="section"><div class="grid-3">' +
-    [['SythonOS 使用手册', '安装、六层架构、159 个应用与 111 个 Sky* 套件用法。'],
+    [['SythonOS 使用手册', '安装、六层架构、246 个应用与 111 个 Sky* 套件用法。'],
      ['Fusion OS 使用手册', '四形态适配、智能体框架与桌面外壳。'],
      ['Hyper 接入文档', '云端 API 与本地部署；六档位与定价口径。'],
      ['Autopilot 验证台手册', '三套车辆体系、仿真频率与遥测口径。'],
@@ -8350,7 +8350,7 @@
   route('/developers/changelog/', std('更新日志', '版本更新记录。',
     V.hero('开发者', '更新日志', '按版本记录变更。') +
     '<section class="section"><div class="tl">' +
-    [['2026-09-28', 'Turbo 33,891 行正式发布：六层架构、Skyline Intelligence、液态玻璃三代、来宾环境五坑修复'],
+    [['2026-09-28', 'Turbo 2,384 万行正式发布：六层架构、Skyline Intelligence、液态玻璃三代、来宾环境五坑修复'],
      ['2026-08-30', '液态玻璃三代演进技术详解；SkyGlow 隔离变量实验'],
      ['2026-07-22', '评测方法论：用真实工作流里的任务'],
      ['2026-06-10', 'Hyper 5 六款跑分表公开；定价阶梯概念页']
@@ -8612,16 +8612,16 @@
       ['开发者生态', '为 AI 造了个编辑器']
     ]) +
     V.callout('本网站不刊登任何个人姓名、肖像与用户评价；所有能力口径以产品页与规格页为准。', 'callout-warn') +
-    rel([['发展历程', '#/about/history/', '从 4,312 行到 33,891 行'], ['ESG', '#/about/esg/', '负责任的人工智能'], ['联系我们', '#/about/contact/', '按事项选渠道']]) +
+    rel([['发展历程', '#/about/history/', '从 18.6 万行到 2,384 万行'], ['ESG', '#/about/esg/', '负责任的人工智能'], ['联系我们', '#/about/contact/', '按事项选渠道']]) +
     src('关于') + '</section>'));
 
   route('/about/history/', std('发展历程', '版本谱系时间轴。',
-    V.hero('关于', '发展历程', '从 4,312 行到 33,891 行。') +
+    V.hero('关于', '发展历程', '从 2021 年的 18.6 万行，到 2026 年的 2,384 万行。') +
     '<section class="section"><div class="tl">' +
     D.about.history.map(function (x) {
       return '<div class="tl-item"><div class="tl-date">' + esc(x.y) + '</div><h2>' + esc(x.y) + '</h2><p class="card-sub">' + esc(x.t) + '</p></div>';
     }).join('') + '</div>' +
-    V.callout('代码行进阶：每一行都对应一个真实功能；主干从 1.5 版的 4,312 行增长到 Turbo 的 33,891 行，手写代码不到 3 MB。') +
+    V.callout('代码行进阶：每一行都对应一个真实功能；主干从 2021 年 1.5 版的 18.6 万行增长到 2026 年 Turbo 的 2,384 万行。') +
     rel([['版本谱系', '#/technology/lineage/', '接管 → 建平台 → 让 AI 干活'], ['工程起源', '#/technology/origin/', '早期工程约束'], ['SythonOS', '#/os/sythonos/', '当前版本']]) +
     src('关于') + '</section>'));
 
