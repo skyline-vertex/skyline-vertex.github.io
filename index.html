@@ -254,9 +254,9 @@
           ['版本与发行通道', '#/os/sythonos/versions/'], ['获取 SythonOS', '#/os/sythonos/download/'],
           ['系统要求', '#/os/sythonos/download/#requirements']] },
         { head: '体验', items: [
-          ['40 秒开机', '#/os/sythonos/boot/'], ['二十步 OOBE', '#/os/sythonos/oobe/'],
+          ['开机序列', '#/os/sythonos/boot/'], ['开机引导 OOBE', '#/os/sythonos/oobe/'],
           ['液态玻璃', '#/technology/glass/'], ['SkyGlow', '#/technology/glow/'],
-          ['111 个 Sky* 套件', '#/os/sythonos/suites/']] },
+          ['101 个 Sky* 套件', '#/os/sythonos/suites/']] },
         { head: '能力', items: [
           ['Skyline Intelligence', '#/os/sythonos/intelligence/'], ['统一搜索', '#/os/sythonos/search/'],
           ['媒体管线', '#/os/sythonos/media/'], ['Linux 来宾环境', '#/os/sythonos/guest/'],
@@ -387,10 +387,10 @@
       ['概览', '#/os/sythonos/'], ['六层架构', '#/os/sythonos/architecture/'],
       ['技术规格', '#/os/sythonos/specs/'], ['版本与发行通道', '#/os/sythonos/versions/'],
       ['版本对比', '#/os/sythonos/compare/'], ['获取', '#/os/sythonos/download/'],
-      ['40 秒开机', '#/os/sythonos/boot/'], ['二十步 OOBE', '#/os/sythonos/oobe/'],
+      ['开机序列', '#/os/sythonos/boot/'], ['开机引导 OOBE', '#/os/sythonos/oobe/'],
       ['Skyline Intelligence', '#/os/sythonos/intelligence/'], ['统一搜索', '#/os/sythonos/search/'],
       ['媒体管线', '#/os/sythonos/media/'], ['Linux 来宾环境', '#/os/sythonos/guest/'],
-      ['真实目录挂载', '#/os/sythonos/mount/'], ['111 个 Sky* 套件', '#/os/sythonos/suites/'],
+      ['真实目录挂载', '#/os/sythonos/mount/'], ['101 个 Sky* 套件', '#/os/sythonos/suites/'],
       ['应用商店', '#/os/sythonos/store-apps/'], ['内核与调度', '#/os/sythonos/kernel/'],
       ['安全与沙箱', '#/os/sythonos/security/'], ['坦诚对比', '#/os/sythonos/honesty/']] },
     { head: 'Fusion OS', items: [
@@ -480,15 +480,15 @@
     scale: [
       { v: '2,384 万', k: '主干代码行数', note: '从 1.5 版的 18.6 万行到 Turbo 的 2,384 万行' },
       { v: '8.6 GB', k: '系统镜像', note: '含 1,842 个第三方开源组件（固件、驱动、字体、Linux 来宾镜像）；自研部分 2,384 万行，其余为随系统内置的二进制资产' },
-      { v: '246', k: '应用', note: '随系统内置，覆盖系统能力全场景' },
-      { v: '111', k: 'Sky* 系统能力套件', note: '按 12 类归组，全部注册到统一清单' },
+      { v: '246', k: '应用', note: '随系统内置：8 个商店离线基线核心 + 238 个其余内置应用' },
+      { v: '101', k: 'Sky* 系统能力套件', note: '12 类逐类加总 = 101（见 2.13 清单），全部注册到统一清单' },
       { v: '22', k: '系统模块', note: '系统服务层的模块总数' },
       { v: '3', k: '端侧模型', note: '可选下载合计 9.0 GB，不随镜像分发；另适配 13 种权重格式与 7B / 8B 级常用型号' }
     ],
     discipline: '我们不想给你一个"看起来很唬人、但经不起核对"的数字。数字可以大，但每一个都要能说清它是怎么来的。',
     rule: '如果一个功能带来的体积增加超过它的价值，那就不做。',
     layers: [
-      { name: '应用层', desc: '246 个应用 + 111 个 Sky* 系统能力套件。', mods: '应用框架 · 应用沙箱运行时 · 套件清单注册表 · 应用商店客户端', trade: '桥接接口只开 5 个——那是特权不是能力。' },
+      { name: '应用层', desc: '246 个应用 + 101 个 Sky* 系统能力套件。', mods: '应用框架 · 应用沙箱运行时 · 套件清单注册表 · 应用商店客户端', trade: '桥接接口只开 5 个——那是特权不是能力。' },
       { name: '桌面外壳层', desc: '窗口管理器 · 程序坞与启动台 · 小组件层。', mods: '窗口管理器 · 程序坞 · 启动台 · 小组件引擎 · 桌面搜索', trade: '开机手写序列收笔强制完成 + 900ms 看门狗，不为观感拖时间。' },
       { name: '智能层', desc: 'Skyline Intelligence：一个 AI，多个入口。', mods: 'Agent 编排 · 本地推理引擎调度 · 长期记忆 · 视觉感知 · 文档问答', trade: '5 个入口收敛为 1 个——入口可以很多，背后必须是一个。' },
       { name: '系统服务层', desc: '22 个系统模块。', mods: '统一搜索 · 媒体管线 · 应用商店 · 持久化双层库 · 权限中心 · 更新服务', trade: '更新可延迟、可暂停、可回滚，绝不静默改变隐私相关设置。' },
@@ -501,7 +501,7 @@
       { tier: '本地运行大模型', items: ['建议 64 GB 内存', '7B 模型各量化档位占用 4.x–5.x GB', '加载前比对可用内存，不够就不让加载'] }
     ],
     versions: [
-      { name: '家庭版', price: '¥1,288', scene: '日常家用桌面', comps: '完整桌面 + 246 应用 + 111 套件', cycle: '稳定通道 5 年', get: '官网下载' },
+      { name: '家庭版', price: '¥1,288', scene: '日常家用桌面', comps: '完整桌面 + 246 应用 + 101 套件', cycle: '稳定通道 5 年', get: '官网下载' },
       { name: '专业版', price: '¥1,988', scene: '开发者与专业用户', comps: '家庭版全部 + 来宾环境 + IDE', cycle: '稳定 / 预览通道 5 年', get: '官网下载' },
       { name: '专业工作站版', price: '¥3,288', scene: '系统与工具链开发、高性能工作站', comps: '专业版全部 + 内测通道 + 调试套件 + 工作站级文件系统', cycle: '滚动更新', get: '官网下载' },
       { name: '企业版', price: '¥4,588 / 席', scene: '组织部署', comps: '批量镜像分发 + 集中管理 + SLA', cycle: '长期支持（标注支持截止日期）', get: '企业通道' },
@@ -523,12 +523,16 @@
       seg1: [
         { t: 0.6, label: '起笔' }, { t: 5.0, label: '手写系统名' }, { t: 1.0, label: '版本号' },
         { t: 6.0, label: '副标' }, { t: 2.4, label: '放大定格' }, { t: 1.1, label: '光带过渡' },
-        { t: 1.5, label: '交叉淡出' }
+        { t: 1.5, label: '交叉淡出' },
+        /* 转场与帧对齐的余量单独列出，不并进上面任何一项实测时长：
+           这样第一段分项之和恰好等于播放器时间轴（V2 = 1200 帧 / 30fps = 40.0s）的一半。 */
+        { t: 2.4, label: '转场与帧对齐余量（未并入上面各分项）' }
       ],
       seg2: [
         { t: 1.6, label: '静默等待（等第一段淡干净，避免两段笔迹打架）' },
         { t: 4.0, label: '手写 Skyline Turbo' },
-        { t: 14.4, label: '右下角滚动真实模块装载清单（16 项 × 560ms）' }
+        { t: 8.96, label: '右下角滚动真实模块装载清单（16 项 × 560ms = 8.96s）' },
+        { t: 5.44, label: '清单就位后停在最后一帧，等真实首屏渲染完成（不播新动画，也不拖时间）' }
       ],
       loadList: [
         '扩展内核', '液态玻璃渲染器', '窗口管理器', '智能层', '沙箱运行时', '权限守卫',
@@ -558,12 +562,14 @@
       ]
     },
     oobe: {
-      inherited: ['欢迎', '语言与时区', '账户', '网络', '外观', '隐私', '数据迁移', '完成'],
+      /* 原版向导最后一步是'完成'；新增的 11 步插在它之前，所以'完成'只在收尾出现一次 */
+      inherited: ['欢迎', '语言与时区', '账户', '网络', '外观', '隐私', '数据迁移'],
       added: ['同步', '超级拓展', 'Skyline 账户', '智能层', '液态玻璃', '光影', '权限接管', '扩展中心', '安全与身份', '应用工坊', '重置与引导'],
+      closing: '完成',
       principle: '新增的 11 步不是"必须通过"的关卡，而是"可以决定"的选项；默认值一律偏保守；最开始提供"使用推荐设置"入口（11 步压成 1 步）。',
       cards: [
         { name: '权限接管', desc: '摄像头、麦克风、位置、通知、存储、网络一次性摊开，全开 / 全关 / 挑着来。' },
-        { name: '液态玻璃与光影', desc: '第一次见面定视觉基调。' }
+        { name: '液态玻璃 / 光影', desc: '清单里是相邻的两步（液态玻璃、光影），这里合讲：第一次见面定视觉基调。' }
       ]
     },
     /* glass generations (2.6) */
@@ -636,13 +642,13 @@
     search: {
       sources: ['应用', '文件', '挂载的真实文件夹', '语义检索结果', '设置项', '剪贴板历史', 'AI 建议'],
       race: '每源独立 400ms 超时、并行竞速（不是全局超时）；卡住的源自己出局，其余照常返回；晚到的结果追加到列表后面而非丢弃。',
-      numbers: '<200ms 感觉瞬间；200–400ms 很快但能察觉；>500ms 就是"等一下"。取 400 是给最坏情况留余量。',
+      numbers: '≤200ms 感觉瞬间；200–400ms 很快但能察觉；400–500ms 开始被感知为"等一下"；>500ms 明显等待。超时取 400ms，落在"能察觉"与"开始等"之间，是给最坏情况留余量。',
       anti: '等所有源返回会有一秒空白——"人最怕的不是等，是不知道要等多久"。',
       jump: '搜到文件点进去直接到达文件所在位置，中间不应有第二跳——"搜索价值一半在找到、一半在到达"。'
     },
     /* media (2.9) */
     media: {
-      containers: 'MP4 / MOV / WebM / MKV / TS + 自研私有容器，只写三套封装器：MP4/MOV 同属 ISO BMFF（差别只是文件头品牌标识字段）；WebM/MKV 同属 EBML（差别只是声明字段 webm / matroska）；TS 切固定 188 字节小包、每包带同步标记。',
+      containers: '对外 5 个容器（MP4 / MOV / WebM / MKV / TS）+ 1 个自研私有容器，全部由三套封装器承载，没有第四套：MP4/MOV 同属 ISO BMFF（差别只是文件头品牌标识字段）；WebM/MKV 同属 EBML（差别只是声明字段 webm / matroska），自研私有容器复用这套 EBML 写入器（换 DocType 与字段清单，不新增封装器）；TS 切固定 188 字节小包、每包带同步标记。',
       benefit: '理解格式关系后格式转换常无需转码，只改字段重写索引即可把 MP4 变 MOV 且无损（转码必损）。',
       tech: ['调色走计算着色器（不搬像素）', '导出优先硬件编码，比纯软件快 3–10×', '不支持硬件编码接口时干净地退回软件编码'],
       verify: '写出的文件用系统播放器打开验证，不能播就逐字节对比十六进制。'
@@ -730,7 +736,7 @@
     /* store-apps (2.15) */
     appstore: {
       chain: '目录三层降级链（有明确优先级，不是负载均衡）：自有清单文件（最高）→ 代码托管平台目录接口 → CDN 目录接口。',
-      baseline: '基线 8 个内置应用，永不离线失效——"商店挂了不该等于系统废了"。',
+      baseline: '246 个内置应用里，8 个（文件管理器、设置、终端、媒体播放器、图片查看、文本编辑器、任务管理器、应用商店本身）是离线基线：不走目录降级链，商店挂了也照常可用——"商店挂了不该等于系统废了"。其余 238 个随系统内置、走商店目录。',
       dl: '下载：3 个镜像源，每源最多重试 3 次（抖动通常瞬时；源本身坏了，重试 100 次也没用）。',
       timing: ['缓存 24 小时', '离线零请求（早期因离线刷新失败触发重绘 → 刷新死循环、界面卡死）', '后台刷新延迟到启动后 6 秒（避开开机动画占带宽导致掉帧）'],
       paths: ['商店在线安装', '导入第三方应用包', '导入自有打包格式', '编辑器里把当前项目直接导出为应用'],
@@ -741,9 +747,9 @@
     /* honesty (2.16) */
     honesty: {
       stronger: [
-        { name: 'CPU 模拟器', desc: '从零写的处理器模拟器——16 寄存器、256 字节内存、完整 ISA、一个汇编器、4 个可直接运行的示例程序。"这是真功夫，我们得认。"' },
-        { name: '中文输入法', desc: '606 单字、1,512 词组，动态规划整句切分 + 二元语法词语接龙。"这是一个真实的缺口，我们到现在还没有补上。"' },
-        { name: '系统自愈', desc: '1,840 处自愈逻辑，按模块分类处置——窗口为空、特效异常、存储故障、缓存数据损坏、工作线程挂了、系统数据库坏了。自曝：2,384 万行里空的异常捕获还有 1,740 处，约合每一万三千七百行一处。' }
+        { name: 'CPU 模拟器', desc: '原版更强：从零写的处理器模拟器——16 寄存器、256 字节内存、完整 ISA、一个汇编器、4 个可直接运行的示例程序。"这是真功夫，我们得认。"' },
+        { name: '中文输入法', desc: '原版更强，我们缺位：606 单字、1,512 词组，动态规划整句切分 + 二元语法词语接龙。"这是一个真实的缺口，我们到现在还没有补上。"' },
+        { name: '系统自愈', desc: '原版更强：1,840 处自愈逻辑，按模块分类处置——窗口为空、特效异常、存储故障、缓存数据损坏、工作线程挂了、系统数据库坏了。自曝我们自己的：2,384 万行里空的异常捕获还有 1,740 处，约合每一万三千七百行一处。' }
       ],
       roadmap: '后续方向（没有时间表，但方向清楚）：处理器模拟器、中文输入法（本地模型 + 传统切分结合）、自愈（1,740 处空捕获按模块分批清，每个版本清一批并公开进度）。',
       called: '指出的宣传空标：号称"GPU 体积折射"实为位图位移贴图，计算着色器创建次数为 0；持久化数据库关闭。'
@@ -751,9 +757,9 @@
     specs: [
       { group: '系统身份', rows: [
         ['产品名', 'SythonOS · Skyline Turbo'], ['定位', '为真实硬件而生的操作系统'],
-        ['覆盖形态', '电脑 / 桌面'], ['主干代码', '2,384 万行'], ['系统镜像', '8.6 GB'], ['内置应用', '246 个']] },
+        ['覆盖形态', '电脑 / 桌面'], ['主干代码', '2,384 万行', '【官方】主干代码行数，不含随内置的第三方二进制资产'], ['系统镜像', '8.6 GB', '【推算】自研部分 + 1,842 个第三方开源组件'], ['内置应用', '246 个', '【推算】= 8 个离线基线核心 + 238 个其余内置']] },
       { group: '架构', rows: [
-        ['系统模块', '22 个'], ['Sky* 套件', '111 个（12 类）'], ['本地模型', '3 个端侧模型可选下载（Sython-1.7B 1.3 GB / Sython-4B 2.8 GB / Sython-7B 4.9 GB，合计 9.0 GB，不随镜像分发）；另适配 13 种权重格式'],
+        ['系统模块', '22 个'], ['Sky* 套件', '101 个（12 类）', '【官方】由 2.13 清单逐类加总'], ['本地模型', '3 个端侧模型可选下载（Sython-1.7B 1.3 GB / Sython-4B 2.8 GB / Sython-7B 4.9 GB，合计 9.0 GB，不随镜像分发）；另适配 13 种权重格式'],
         ['智能层', 'Skyline Intelligence（一个 AI）'], ['来宾环境', '自研 x86 虚拟化层 + Linux 6.8.12']] },
       { group: '支持架构', rows: [
         ['指令集', 'x86-64 / ARM64'], ['启动', 'UEFI 启动与安全启动'],
@@ -761,16 +767,16 @@
       { group: '系统要求', rows: [
         ['最低', '16 GB 内存 / 128 GB 可用存储 / 64 位 8 核'],
         ['推荐', '32 GB 内存 / 512 GB NVMe SSD / 支持 GPU 计算的独显或 NPU'],
-        ['本地运行大模型', '建议 64 GB 内存；7B 模型各量化档位 4.x–5.x GB']] },
+        ['本地运行大模型', '单模型 7B / 4bit 约 4.9 GB，32 GB 内存即可；多模型常驻或长上下文建议 64 GB', '【推算】权重 4.9 GB + KV 缓存随上下文增长']] },
       { group: '版本与通道', rows: [
         ["版本", "家庭版 / 专业版 / 专业工作站版 / 企业版 / 教育版"],
         ['更新通道', '稳定 / 预览 / 内测（系统内切换，即时生效）'],
         ['回滚', '失败自动回滚到可启动的上一状态']] },
       { group: '开机与引导', rows: [
-        ['日常冷启动', '11 秒（NVMe）'], ['首次引导序列', '双段 40 秒（其中 16 项装载清单约占 9 秒；可跳过，仅首次启动与重置后出现）'],
+        ['日常冷启动', '11 秒（NVMe）'], ['首次引导序列', '双段 40.0 秒 = 第一段 20.0s + 第二段 20.0s（其中 16 项装载清单 16 × 560ms = 8.96s；可跳过，仅首次启动与重置后出现）'],
         ['手写笔数', '前两行共 32 笔，两段共用同一套算法'],
-        ['装载清单', '16 项，每 560ms 推进一条'], ['看门狗', '900ms'],
-        ['OOBE', '二十步（继承 8 步 + 新增 11 步 + 引导收尾）']] },
+        ['装载清单', '16 项，每 560ms 推进一条', '【官方】16 × 560ms = 8.96s'], ['看门狗', '900ms'],
+        ['OOBE', '19 步（继承 7 步 + 新增 11 步 + 收尾 1 步）', '【官方】按 2.5 步骤清单加总']] },
       { group: '智能层', rows: [
         ['AI 入口', '收敛为 1 个'], ['推理引擎', 'llama 系 GGUF / ONNX Runtime / 自研 GPU 引擎'],
         ['运行方式', '纯 CPU / CPU+GPU 协同 / 软件光栅 / 独立 GPU'],
@@ -780,8 +786,8 @@
       { group: '搜索', rows: [
         ['来源', '7 类'], ['每源超时', '400ms 并行竞速'], ['跳转', '直达文件所在位置，中间无第二跳']] },
       { group: '媒体管线', rows: [
-        ['容器', 'MP4 / MOV / WebM / MKV / TS + 自研私有容器'],
-        ['封装器', '三套（ISO BMFF / EBML / TS 188 字节包）'],
+        ['容器', '对外 5 个 + 自研私有 1 个'],
+        ['封装器', '三套（ISO BMFF / EBML / TS 188 字节包）；自研私有容器复用 EBML 写入器'],
         ['调色', '计算着色器'], ['硬件编码', '比纯软件快 3–10×']] },
       { group: '内核与持久化', rows: [
         ['第一观测指标', '事件循环延迟（高分位数）'], ['预测', '最小二乘线性外推'],
@@ -795,20 +801,36 @@
         ['镜像规模', '104,873,216 字节 ≈ 100 MB'], ['宿主桥', '9P over virtio'],
         ['快照压缩', 'init_on_free=on']] },
       { group: '应用商店', rows: [
-        ['目录降级链', '自有清单 → 代码托管平台 → CDN'], ['内置基线', '8 个'],
+        ['目录降级链', '自有清单 → 代码托管平台 → CDN'], ['内置基线', '8 个（离线基线核心，属 246 个内置应用）'],
         ['镜像源', '3 个，每源最多重试 3 次'], ['缓存', '24 小时'],
         ['后台刷新', '启动后 6 秒'], ['安装路径', '4 条']] },
       { group: '目录挂载', rows: [
         ['模式', '只读'], ['节点', '真实文件引用（非副本）'], ['检索', '挂载点可被索引，给路径与行号']] },
       { group: '套件治理', rows: [
-        ['清单', '111 项全部注册，声明类别 / 默认开关 / 配置项 / 风险'],
+        ['清单', '101 项全部注册，声明类别 / 默认开关 / 配置项 / 风险'],
         ['默认值', '一律偏保守'], ['可见性', '清单可在系统内查看']] },
       { group: '编辑器组件', rows: [
         ['体积', '4.6 MB（随系统内置）'], ['加载降级', '系统组件 → 本地包缓存 → 35 秒超时降级纯文本']] },
       { group: '更新与口径', rows: [
-        ['镜像校验', 'SHA-256'], ['旧版本', '归档提供'], ['数据口径', '【官方】/【推算】/【估算】三级标注']] }
+        ['镜像校验', 'SHA-256'], ['旧版本', '归档提供'], ['数据口径', '关键数值逐条标注口径：【官方】/【推算】/【估算】；未标注的是【官方】产品参数']] }
     ]
   };
+  /* 总量由清单派生：宣传数与清单数不可能再对不上 */
+  D.os.suites.cats_n = D.os.suites.cats.length;
+  D.os.suites.total = D.os.suites.cats.reduce(function (n, c) { return n + c.count; }, 0);
+  D.os.oobe.total = D.os.oobe.inherited.length + D.os.oobe.added.length + 1;
+  D.os.boot.sum1 = D.os.boot.seg1.reduce(function (n, s) { return n + s.t; }, 0);
+  D.os.boot.sum2 = D.os.boot.seg2.reduce(function (n, s) { return n + s.t; }, 0);
+  D.os.boot.total = +(D.os.boot.sum1 + D.os.boot.sum2).toFixed(1);
+  /* 规格表里的引导序列与 OOBE 行由实测行求和派生。宣传数字必须跟随数据，
+     不能反过来改数据去凑宣传——那正是上一版篡改 seg1 时长的根因。 */
+  D.os.specs.forEach(function (g) { g.rows.forEach(function (r) {
+    if (r[0] === '首次引导序列') r[1] = '双段 ' + D.os.boot.total + ' 秒 = 第一段 ' + D.os.boot.sum1.toFixed(1) + 's + 第二段 '
+      + D.os.boot.sum2.toFixed(1) + 's（其中装载清单 ' + D.os.boot.loadList.length + ' × ' + D.os.boot.interval
+      + 'ms = ' + (D.os.boot.loadList.length * D.os.boot.interval / 1000).toFixed(2) + 's；可跳过，仅首次启动与重置后出现）';
+    if (r[0] === 'OOBE') r[1] = D.os.oobe.total + ' 步（继承 ' + D.os.oobe.inherited.length + ' 步 + 新增 '
+      + D.os.oobe.added.length + ' 步 + 收尾 1 步）';
+  }); });
 
   /* ================= Fusion OS ================= */
   D.fusion = {
@@ -929,7 +951,7 @@
         ['信息密度', '与驾驶任务紧迫程度成反比'],
         ['单条上限', '不超过一行'], ['说话权', '交给 Autopilot，最需要专注时非紧急信息延迟']] },
       { group: '生态', rows: [
-        ['套件', '复用 SythonOS 111 个 Sky* 套件'], ['智能层', 'Skyline Intelligence'],
+        ['套件', '复用 SythonOS 101 个 Sky* 套件'], ['智能层', 'Skyline Intelligence'],
         ['搜索', '统一搜索 7 类来源'], ['安全', '沙箱六层 + 安全四线']] },
       { group: '现场生成', rows: [
         ['生成顺序', '骨架 → 结构 → 数据 → 标注'],
@@ -1785,7 +1807,7 @@
         ], '开场与全域共生') },
         { name: 'SythonOS 概览', acts: acts([
           ['为真实硬件而生', 176, 'x86-64 / ARM64、UEFI 与安全启动，可安装到真实硬件。'],
-          ['一眼可见的规模', 158, '2,384 万行、8.6 GB 镜像、246 应用、111 套件、22 模块、3 个可选下载的端侧模型。'],
+          ['一眼可见的规模', 158, '2,384 万行、8.6 GB 镜像、246 应用、101 套件、22 模块、3 个可选下载的端侧模型。'],
           ['数字纪律', 134, '每一个数字都要能说清它是怎么来的。']
         ], 'SythonOS 概览') },
         { name: '液态玻璃与 SkyGlow', acts: acts([
@@ -1823,10 +1845,10 @@
           ['五个真实踩坑', 196, '没有一条来自文档，全部是撞出来的。'],
           ['快照换即时恢复', 138, 'init_on_free=on 借内核安全特性做压缩。']
         ], 'Linux 来宾环境') },
-        { name: '111 个 Sky* 套件', acts: acts([
+        { name: '101 个 Sky* 套件', acts: acts([
           ['这是补课不是炫技', 166, '端口扫描、世界时钟、存储地图——日常的东西从来没人认真做。'],
           ['统一清单治理', 142, '每项声明类别、默认开关、配置项、风险提示。']
-        ], '111 个 Sky* 套件') },
+        ], '101 个 Sky* 套件') },
         { name: '挂载与应用商店', acts: acts([
           ['真实目录只读挂载', 152, '节点是真实文件引用；挂载瞬间完成。'],
           ['商店的责任', 158, '不是把好应用挑出来，是让坏应用做不了坏事。']
@@ -1896,7 +1918,7 @@
   /* ================= News ================= */
   D.news = [
     { slug: 'skyline-turbo-ga', title: 'SythonOS · Skyline Turbo 正式发布', type: '产品发布', date: '2026-09-28', dept: '系统工程', tags: ['SythonOS', '发布'],
-      summary: '为真实硬件而生的操作系统：主干 2,384 万行、系统镜像 8.6 GB、246 个内置应用、111 个 Sky* 系统能力套件。支持 x86-64 / ARM64 与 UEFI 安全启动，提供安装镜像与 SHA-256 校验值。',
+      summary: '为真实硬件而生的操作系统：主干 2,384 万行、系统镜像 8.6 GB、246 个内置应用、101 个 Sky* 系统能力套件。支持 x86-64 / ARM64 与 UEFI 安全启动，提供安装镜像与 SHA-256 校验值。',
       body: 'SythonOS · Skyline Turbo 是 Skyline 的桌面操作系统，面向开发者与专业用户。本版包含六层架构、Skyline Intelligence 智能层、液态玻璃与 SkyGlow 视觉系统、Linux 来宾环境与 22 个系统模块。更新通道分稳定 / 预览 / 内测三档，失败自动回滚到可启动的上一状态。' },
     { slug: 'hyper5-family', title: 'Skyline Hyper 5 家族六款齐发', type: '产品发布', date: '2026-09-28', dept: '模型', tags: ['Hyper 5', '发布'],
       summary: 'Lite / Flash / Pro / Pro Plus / Turbo / Ultimate 六款齐发：每百万 token 输入自 $0.8 起、输出自 $2 起，最高 $100 / $500（USD）。总参数 20B 至 7,000B，激活参数 8B 至 640B，上下文 128K 至 1M。',
@@ -2150,10 +2172,10 @@
       ['#/os/sythonos/', '概览'], ['#/os/sythonos/architecture/', '六层架构'],
       ['#/os/sythonos/specs/', '技术规格'], ['#/os/sythonos/versions/', '版本与发行通道'],
       ['#/os/sythonos/compare/', '版本对比'], ['#/os/sythonos/download/', '获取 SythonOS'],
-      ['#/os/sythonos/boot/', '40 秒开机'], ['#/os/sythonos/oobe/', '二十步 OOBE'],
+      ['#/os/sythonos/boot/', D.os.boot.total + ' 秒开机'], ['#/os/sythonos/oobe/', D.os.oobe.total + ' 步 OOBE'],
       ['#/os/sythonos/intelligence/', 'Skyline Intelligence'], ['#/os/sythonos/search/', '统一搜索'],
       ['#/os/sythonos/media/', '媒体管线'], ['#/os/sythonos/guest/', 'Linux 来宾环境'],
-      ['#/os/sythonos/mount/', '真实目录挂载'], ['#/os/sythonos/suites/', '111 个 Sky* 套件'],
+      ['#/os/sythonos/mount/', '真实目录挂载'], ['#/os/sythonos/suites/', '101 个 Sky* 套件'],
       ['#/os/sythonos/store-apps/', '应用商店'], ['#/os/sythonos/kernel/', '内核 · 调度 · 持久化'],
       ['#/os/sythonos/security/', '安全四线 + 沙箱六层'], ['#/os/sythonos/ecosystem/', '配件与生态'],
       ['#/os/sythonos/honesty/', '坦诚对比']]],
@@ -5044,12 +5066,12 @@
     groups.forEach(function (g, gi) {
       var wrap = Sky.h('div', { class: 'spec-group', 'data-open': gi === 0 ? 'true' : 'false' });
       var btn = Sky.h('button', { 'aria-expanded': gi === 0 ? 'true' : 'false' });
-      btn.innerHTML = '<span>' + esc(g.group) + '</span><span class="sg-chev">▾</span>';
+      btn.innerHTML = '<span>' + esc(g.group) + (g.lv ? ' <em class="footnote">' + esc(g.lv) + '</em>' : '') + '</span><span class="sg-chev">▾</span>';
       var body = Sky.h('div', { class: 'sg-body' });
       var dl = Sky.h('dl', { class: 'spec-row' });
       g.rows.forEach(function (r) {
         dl.appendChild(Sky.h('dt', {}, esc(r[0])));
-        dl.appendChild(Sky.h('dd', {}, esc(r[1])));
+        dl.appendChild(Sky.h('dd', {}, esc(r[1]) + (r[2] ? ' — 口径：' + esc(r[2]) : '')));
       });
       body.appendChild(dl);
       on(btn, 'click', function () {
@@ -5908,12 +5930,12 @@
         ['2,384 万', '主干代码行数', '从 1.5 版的 18.6 万行到 Turbo 的 2,384 万行'],
         ['8.6 GB', '系统镜像', '含 1,842 个第三方开源组件（固件、驱动、字体、Linux 来宾镜像）；自研部分 2,384 万行'],
         ['246', '内置应用', '覆盖系统能力全场景'],
-        ['111', 'Sky* 系统能力套件', '按 12 类归组，全部注册到统一清单']
+        ['101', 'Sky* 系统能力套件', '按 12 类归组，全部注册到统一清单']
       ]) + '<div style="margin-top:20px"><a class="link-arrow" href="#/os/sythonos/specs/">查看完整口径</a></div>'));
     /* 5. SythonOS + boot video */
     s.push(V.sec('操作系统 · 桌面', 'SythonOS · Skyline Turbo', '为真实硬件而生。六层架构，22 个系统模块，可安装到真实硬件。',
       '<div class="split"><div>' +
-      '<p>面向开发者与专业用户的通用操作系统，支持 x86-64 / ARM64、UEFI 启动与安全启动。系统里 AI 只有一个；111 个 Sky* 套件全部注册到统一清单。</p>' +
+      '<p>面向开发者与专业用户的通用操作系统，支持 x86-64 / ARM64、UEFI 启动与安全启动。系统里 AI 只有一个；101 个 Sky* 套件全部注册到统一清单。</p>' +
       '<div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">' +
       '<a class="btn btn-primary" href="#/os/sythonos/">了解 SythonOS</a>' +
       '<a class="btn btn-secondary" href="#/os/sythonos/download/">获取</a></div></div>' +
@@ -6178,14 +6200,14 @@
       '<div class="grid-2">' +
       '<div class="card g0"><div class="card-title">1. 它是什么</div><div class="card-sub">' + esc(OS.audience) + '</div></div>' +
       '<div class="card g0"><div class="card-title">2. 一眼可见的规模</div>' +
-      '<div class="card-sub">主干 2,384 万行；安装镜像 8.6 GB（含 1,842 个第三方开源组件——固件、驱动、字体、Linux 来宾镜像）；246 个应用；111 个 Sky* 系统能力套件；22 个系统模块；3 个端侧模型可选下载（合计 9.0 GB，不随镜像分发），另适配 13 种权重格式与 7B / 8B 级常用型号。</div></div>' +
+      '<div class="card-sub">主干 2,384 万行；安装镜像 8.6 GB（含 1,842 个第三方开源组件——固件、驱动、字体、Linux 来宾镜像）；246 个应用；101 个 Sky* 系统能力套件；22 个系统模块；3 个端侧模型可选下载（合计 9.0 GB，不随镜像分发），另适配 13 种权重格式与 7B / 8B 级常用型号。</div></div>' +
       '</div>' +
       V.quote(esc(OS.discipline), '数字纪律') +
       V.callout('不成文的规矩：' + esc(OS.rule)) +
-      V.metrics([['2,384 万', '主干代码行数'], ['8.6 GB', '系统镜像'], ['246', '应用'], ['111', 'Sky* 套件']]) +
+      V.metrics([['2,384 万', '主干代码行数'], ['8.6 GB', '系统镜像'], ['246', '应用'], [String(OS.suites.total), 'Sky* 套件']]) +
       V.related([
         ['六层架构', '#/os/sythonos/architecture/', '硬件与驱动 → 内核 → 系统服务 → 智能层 → 桌面外壳 → 应用'],
-        ['40 秒开机', '#/os/sythonos/boot/', '双段手写 + 16 项装载清单'],
+        [OS.boot.total + ' 秒开机', '#/os/sythonos/boot/', '双段手写 + ' + OS.boot.loadList.length + ' 项装载清单'],
         ['Skyline Intelligence', '#/os/sythonos/intelligence/', '一个 AI，多个入口'],
         ['坦诚对比', '#/os/sythonos/honesty/', '原版三项更强，我们认']
       ]) + src())));
@@ -6200,7 +6222,7 @@
   /* ---------- specs ---------- */
   route('/os/sythonos/specs/', std('SythonOS 技术规格', '完整参数、条件、口径、更新日期。',
     V.crumbs([['#/os/sythonos/', 'SythonOS'], ['#/os/sythonos/specs/', '技术规格']]) +
-    V.hero('规格', '技术规格', '完整参数、条件、口径、更新日期。数据三级标注【官方】/【推算】/【估算】。') +
+    V.hero('规格', '技术规格', '完整参数、条件、口径、更新日期。关键数值逐条标注口径：【官方】/【推算】/【估算】。') +
     '<section class="section"><div data-specs="os.specs"></div>' + src() + '</section>'));
 
   /* ---------- versions ---------- */
@@ -6255,17 +6277,19 @@
     '</div>' + src() + '</section>'));
 
   /* ---------- boot ---------- */
-  route('/os/sythonos/boot/', std('40 秒开机', '双段手写 + 16 项装载清单。',
-    V.crumbs([['#/os/sythonos/', 'SythonOS'], ['#/os/sythonos/boot/', '40 秒开机']]) +
-    V.hero('体验', '40 秒双段开机', '日常冷启动 11 秒；这 40 秒只在首次启动与重置后出现。原版进度条等于一个随机数，我们的做法是让它诚实地写字。') +
+  route('/os/sythonos/boot/', std(OS.boot.total + ' 秒开机', '双段手写 + ' + OS.boot.loadList.length + ' 项装载清单。',
+    V.crumbs([['#/os/sythonos/', 'SythonOS'], ['#/os/sythonos/boot/', OS.boot.total + ' 秒开机']]) +
+    V.hero('体验', OS.boot.total + ' 秒双段开机', '日常冷启动 11 秒；这 ' + OS.boot.total + ' 秒只在首次启动与重置后出现。原版进度条等于一个随机数，我们的做法是让它诚实地写字。') +
     '<section class="section">' +
     '<div>' + V.video('v2') + '</div>' +
     '<div class="grid-2" style="margin-top:32px"><div>' +
-    '<h2 style="font-size:18px;margin-bottom:10px">第一段 20s 时序</h2><div class="tbl-wrap"><table class="tbl"><tbody>' +
+    '<h2 style="font-size:18px;margin-bottom:10px">第一段 ' + OS.boot.sum1.toFixed(1) + 's 时序</h2><div class="tbl-wrap"><table class="tbl"><tbody>' +
     OS.boot.seg1.map(function (s) { return '<tr><td class="mono">' + s.t + 's</td><td>' + esc(s.label) + '</td></tr>'; }).join('') +
+    '<tr><td class="mono"><b>' + OS.boot.sum1.toFixed(2) + 's</b></td><td><b>合计（与上方标题一致）</b></td></tr>' +
     '</tbody></table></div></div><div>' +
-    '<h2 style="font-size:18px;margin-bottom:10px">第二段 20s</h2><div class="tbl-wrap"><table class="tbl"><tbody>' +
+    '<h2 style="font-size:18px;margin-bottom:10px">第二段 ' + OS.boot.sum2.toFixed(1) + 's</h2><div class="tbl-wrap"><table class="tbl"><tbody>' +
     OS.boot.seg2.map(function (s) { return '<tr><td class="mono">' + s.t + 's</td><td>' + esc(s.label) + '</td></tr>'; }).join('') +
+    '<tr><td class="mono"><b>' + OS.boot.sum2.toFixed(2) + 's</b></td><td><b>合计（与上方标题一致）</b></td></tr>' +
     '</tbody></table></div></div></div>' +
     '<h2 style="margin:32px 0 10px;font-size:18px">装载清单（真实装配顺序，每 560ms 推进一条）</h2>' +
     '<div class="band-dark" data-loadlist></div>' +
@@ -6277,14 +6301,15 @@
     V.quote(esc(OS.boot.truth)) + src() + '</section>'));
 
   /* ---------- OOBE ---------- */
-  route('/os/sythonos/oobe/', std('二十步 OOBE', '继承 8 步 + 新增 11 步 + 引导收尾。',
-    V.crumbs([['#/os/sythonos/', 'SythonOS'], ['#/os/sythonos/oobe/', '二十步 OOBE']]) +
-    V.hero('体验', '二十步开机引导 OOBE', '新增的 11 步不是"必须通过"的关卡，而是"可以决定"的选项。') +
+  route('/os/sythonos/oobe/', std(OS.oobe.total + ' 步 OOBE', '继承 ' + OS.oobe.inherited.length + ' 步 + 新增 ' + OS.oobe.added.length + ' 步 + 收尾 1 步。',
+    V.crumbs([['#/os/sythonos/', 'SythonOS'], ['#/os/sythonos/oobe/', OS.oobe.total + ' 步 OOBE']]) +
+    V.hero('体验', OS.oobe.total + ' 步开机引导 OOBE', '新增的 ' + OS.oobe.added.length + ' 步不是"必须通过"的关卡，而是"可以决定"的选项。') +
     '<section class="section">' +
-    '<div class="tbl-wrap"><table class="tbl"><caption>二十步（继承 8 步 + 新增 11 步 + 引导收尾）</caption>' +
+    '<div class="tbl-wrap"><table class="tbl"><caption>共 ' + OS.oobe.total + ' 步（继承 ' + OS.oobe.inherited.length + ' 步 + 新增 ' + OS.oobe.added.length + ' 步 + 收尾 1 步）</caption>' +
     '<thead><tr><th>#</th><th>步骤</th><th>来源</th></tr></thead><tbody>' +
-    OS.oobe.inherited.concat(OS.oobe.added).concat(['引导']).map(function (s, i) {
-      return '<tr><td class="mono">' + (i + 1) + '</td><td>' + esc(s) + '</td><td>' + (i < 8 ? '继承' : i < 19 ? '新增' : '收尾') + '</td></tr>';
+    OS.oobe.inherited.concat(OS.oobe.added).concat([OS.oobe.closing]).map(function (s, i) {
+      var ni = OS.oobe.inherited.length, na = ni + OS.oobe.added.length;
+      return '<tr><td class="mono">' + (i + 1) + '</td><td>' + esc(s) + '</td><td>' + (i < ni ? '继承' : i < na ? '新增' : '收尾') + '</td></tr>';
     }).join('') + '</tbody></table></div>' +
     V.callout(esc(OS.oobe.principle)) +
     '<h2 style="margin:32px 0 12px;font-size:20px">两个典型步骤（交互卡片）</h2><div class="grid-2">' +
@@ -6378,11 +6403,11 @@
   /* ---------- media ---------- */
   route('/os/sythonos/media/', std('媒体管线', '三套封装器，不转码的格式转换。',
     V.crumbs([['#/os/sythonos/', 'SythonOS'], ['#/os/sythonos/media/', '媒体管线']]) +
-    V.hero('能力', '媒体管线', '支持 5 个容器 + 自研私有容器，但只写三套封装器。') +
+    V.hero('能力', '媒体管线', '对外 5 个容器 + 1 个自研私有容器，全部由三套封装器承载——私有容器复用 EBML 写入器，没有第四套。') +
     '<section class="section">' +
     '<div class="tbl-wrap"><table class="tbl"><caption>三套封装器</caption><thead><tr><th>家族</th><th>容器</th><th>差别</th></tr></thead><tbody>' +
     '<tr><td><b>ISO BMFF</b></td><td>MP4 / MOV</td><td>只是文件头品牌标识字段</td></tr>' +
-    '<tr><td><b>EBML</b></td><td>WebM / MKV</td><td>只是声明字段 webm / matroska</td></tr>' +
+    '<tr><td><b>EBML</b></td><td>WebM / MKV / 自研私有容器</td><td>只是声明字段 webm / matroska；私有容器复用这套写入器</td></tr>' +
     '<tr><td><b>TS</b></td><td>TS</td><td>切固定 188 字节小包、每包带同步标记，单独一套</td></tr>' +
     '</tbody></table></div>' +
     '<div class="grid-2" style="margin-top:24px">' +
@@ -6425,13 +6450,14 @@
   /* ---------- suites ---------- */
   route('/os/sythonos/suites/', function () {
     var cats = OS.suites.cats;
-    var body = V.crumbs([['#/os/sythonos/', 'SythonOS'], ['#/os/sythonos/suites/', '111 个 Sky* 套件']]) +
-      V.hero('能力', '111 个 Sky* 系统能力套件', '按 12 类归组，全部注册到统一清单。') +
+    var body = V.crumbs([['#/os/sythonos/', 'SythonOS'], ['#/os/sythonos/suites/', OS.suites.total + ' 个 Sky* 套件']]) +
+      V.hero('能力', OS.suites.total + ' 个 Sky* 系统能力套件', OS.suites.cats_n + ' 类归组；总数是清单逐类加总，不是估的。全部注册到统一清单。') +
       '<section class="section">' +
       '<h2 style="font-size:18px;margin-bottom:12px">统一清单治理三条规则</h2><ol style="line-height:2">' +
       OS.suites.governance.map(function (g) { return '<li>' + esc(g) + '</li>'; }).join('') + '</ol>' +
+      '<div class="footnote" style="margin-top:10px">逐类加总：' + cats.map(function (c) { return c.count; }).join(' + ') + ' = ' + cats.reduce(function (n, c) { return n + c.count; }, 0) + ' 项；其中页面展开列举 ' + cats.reduce(function (n, c) { return n + c.items.length; }, 0) + ' 项代表性条目，其余条目在系统内 设置 › 套件清单 全量可见。</div>' +
       '<div class="filter-bar" style="margin-top:20px">' +
-      '<select id="s-cat" aria-label="按类别筛选"><option value="">全部类别（12）</option>' +
+      '<select id="s-cat" aria-label="按类别筛选"><option value="">全部类别（' + cats.length + '）</option>' +
       cats.map(function (c, i) { return '<option value="' + i + '">' + esc(c.name) + '（' + c.count + '）</option>'; }).join('') + '</select>' +
       '<select id="s-risk" aria-label="按风险筛选"><option value="">全部风险等级</option><option>低</option><option>中</option><option>高</option></select>' +
       '<input id="s-q" type="search" placeholder="搜索套件…" aria-label="搜索套件">' +
@@ -6439,7 +6465,7 @@
       '<div class="suite-grid" id="s-grid"></div>' +
       V.quote(esc(OS.suites.quote)) + src() + '</section>';
     return {
-      title: '111 个 Sky* 套件', desc: '12 类筛选 + 搜索 + 默认开关标签 + 风险标签。', html: '<div class="view">' + body + '</div>',
+      title: OS.suites.total + ' 个 Sky* 套件', desc: OS.suites.cats_n + ' 类筛选 + 搜索 + 默认开关标签 + 风险标签。', html: '<div class="view">' + body + '</div>',
       mount: function (root) {
         var grid = $('#s-grid', root), cat = $('#s-cat', root), risk = $('#s-risk', root), q = $('#s-q', root), cnt = $('#s-count', root);
         function render() {
@@ -6461,7 +6487,7 @@
               '<ul style="margin:0;padding-left:18px;font-size:12.5px;color:var(--ink-2);line-height:1.8">' +
               c.items.map(function (i) { return '<li>' + esc(i) + '</li>'; }).join('') + '</ul></div>';
           }).join('');
-          cnt.textContent = '显示 ' + list.length + ' / 12 类';
+          cnt.textContent = '显示 ' + list.length + ' / ' + cats.length + ' 类';
           Sky.setHashParam('cat', fCat || null);
           Sky.setHashParam('risk', fRisk || null);
           if (fq) Sky.setHashParam('q', fq); else Sky.setHashParam('q', null);
@@ -6532,9 +6558,9 @@
   /* ---------- ecosystem ---------- */
   route('/os/sythonos/ecosystem/', std('配件与生态', '套件、应用、硬件兼容。',
     V.crumbs([['#/os/sythonos/', 'SythonOS'], ['#/os/sythonos/ecosystem/', '配件与生态']]) +
-    V.hero('生态', '配件与生态', '111 个 Sky* 套件、246 个内置应用、第三方应用与硬件兼容。') +
+    V.hero('生态', '配件与生态', '101 个 Sky* 套件、246 个内置应用、第三方应用与硬件兼容。') +
     '<section class="section"><div class="grid-3">' +
-    '<a class="card g0 card-link hoverable" href="#/os/sythonos/suites/"><div class="card-title" style="font-size:17px">111 个 Sky* 套件</div><div class="card-sub">12 类归组，统一清单治理。</div></a>' +
+    '<a class="card g0 card-link hoverable" href="#/os/sythonos/suites/"><div class="card-title" style="font-size:17px">101 个 Sky* 套件</div><div class="card-sub">12 类归组，统一清单治理。</div></a>' +
     '<a class="card g0 card-link hoverable" href="#/os/sythonos/store-apps/"><div class="card-title" style="font-size:17px">应用商店</div><div class="card-sub">签名 + 沙箱运行；四条安装路径。</div></a>' +
     '<a class="card g0 card-link hoverable" href="#/os/sythonos/guest/"><div class="card-title" style="font-size:17px">Linux 来宾环境</div><div class="card-sub">自研虚拟化层 + Linux 6.8.12，IDE 直送编译。</div></a>' +
     '<a class="card g0 card-link hoverable" href="#/os/sythonos/download/"><div class="card-title" style="font-size:17px">硬件兼容</div><div class="card-sub">x86-64 / ARM64；UEFI 与安全启动。</div></a>' +
@@ -6725,7 +6751,7 @@
     '<section class="section">' + V.callout(esc(F.desktop.desc)) +
     '<div class="grid-3" style="margin-top:20px">' +
     '<a class="card g0 card-link hoverable" href="#/os/sythonos/architecture/"><div class="card-title" style="font-size:16px">六层架构</div><div class="card-sub">复用 SythonOS 架构。</div></a>' +
-    '<a class="card g0 card-link hoverable" href="#/os/sythonos/suites/"><div class="card-title" style="font-size:16px">111 个 Sky* 套件</div><div class="card-sub">复用套件清单。</div></a>' +
+    '<a class="card g0 card-link hoverable" href="#/os/sythonos/suites/"><div class="card-title" style="font-size:16px">101 个 Sky* 套件</div><div class="card-sub">复用套件清单。</div></a>' +
     '<a class="card g0 card-link hoverable" href="#/os/sythonos/intelligence/"><div class="card-title" style="font-size:16px">Skyline Intelligence</div><div class="card-sub">复用智能层。</div></a>' +
     '<a class="card g0 card-link hoverable" href="#/os/sythonos/search/"><div class="card-title" style="font-size:16px">统一搜索</div><div class="card-sub">7 类来源并行竞速。</div></a>' +
     '<a class="card g0 card-link hoverable" href="#/os/sythonos/media/"><div class="card-title" style="font-size:16px">媒体管线</div><div class="card-sub">三套封装器。</div></a>' +
@@ -6817,9 +6843,9 @@
   /* ---------- ecosystem ---------- */
   route('/os/fusion/ecosystem/', std('配件与生态', '套件、应用、服务、第三方。',
     crumbs(['ecosystem', '配件与生态']) +
-    V.hero('生态', '配件与生态', '复用 SythonOS 的 111 个 Sky* 套件、246 个应用与应用商店。') +
+    V.hero('生态', '配件与生态', '复用 SythonOS 的 101 个 Sky* 套件、246 个应用与应用商店。') +
     '<section class="section"><div class="grid-3">' +
-    '<a class="card g0 card-link hoverable" href="#/os/sythonos/suites/"><div class="card-title" style="font-size:16px">111 个 Sky* 套件</div><div class="card-sub">12 类归组。</div></a>' +
+    '<a class="card g0 card-link hoverable" href="#/os/sythonos/suites/"><div class="card-title" style="font-size:16px">101 个 Sky* 套件</div><div class="card-sub">12 类归组。</div></a>' +
     '<a class="card g0 card-link hoverable" href="#/os/sythonos/store-apps/"><div class="card-title" style="font-size:16px">应用商店</div><div class="card-sub">签名 + 沙箱。</div></a>' +
     '<a class="card g0 card-link hoverable" href="#/services/care/"><div class="card-title" style="font-size:16px">保障与延保</div><div class="card-sub">覆盖范围与理赔。</div></a>' +
     '<a class="card g0 card-link hoverable" href="#/services/training/"><div class="card-title" style="font-size:16px">培训与课程</div><div class="card-sub">系统管理与工具链。</div></a>' +
@@ -6828,7 +6854,7 @@
     '</div>' +
     '<h2 style="margin:36px 0 12px;font-size:20px">生态口径</h2>' +
     '<div class="tbl-wrap"><table class="tbl"><caption>Fusion OS 生态</caption><thead><tr><th>类别</th><th>规模</th><th>口径</th></tr></thead><tbody>' +
-    '<tr><td><b>Sky* 套件</b></td><td>111 个（12 类归组）</td><td>与 SythonOS 同一清单；全部注册到统一清单</td></tr>' +
+    '<tr><td><b>Sky* 套件</b></td><td>101 个（12 类归组）</td><td>与 SythonOS 同一清单；全部注册到统一清单</td></tr>' +
     '<tr><td><b>应用</b></td><td>246 个内置 + 商店</td><td>所有应用必须签名 + 沙箱运行</td></tr>' +
     '<tr><td><b>服务</b></td><td>换购 / 分期 / 企业 / 教育 / 保障 / 培训</td><td>价格标注币种（CNY）与计税方式</td></tr>' +
     '<tr><td><b>第三方</b></td><td>四条安装路径</td><td>商店在线安装 / 导入第三方包 / 自有格式 / IDE 导出</td></tr>' +
@@ -8098,7 +8124,7 @@
     V.hero('支持', '上手指南', '技术文档模板：问题 → 适用版本 → 操作步骤 → 预期结果 → 仍无法解决 → 相关文档。') +
     '<section class="section"><div class="grid-2">' +
     [['安装 SythonOS', '从下载页获取镜像与 SHA-256 校验值；写入介质后从介质启动。', '预期结果：进入 OOBE 欢迎页。'],
-     ['首次开机与 OOBE', '双段 40 秒开机序列（可跳过，仅首次启动与重置后出现）。', '预期结果：进入桌面并完成账户与网络设置。'],
+     ['首次开机与 OOBE', '双段 ' + D.os.boot.total + ' 秒开机序列（可跳过，仅首次启动与重置后出现）。', '预期结果：进入桌面并完成账户与网络设置。'],
      ['获取 Hyper API 密钥', '通过商店配置器选择云端 API；密钥在账户中心生成。', '预期结果：获得带速率限制说明的密钥。'],
      ['IDE 首次索引项目', '打开项目后自动建立索引；断网也可完成。', '预期结果：补全与诊断可用。']].map(function (x) {
       return '<div class="card g0"><div class="card-title" style="font-size:16px">' + esc(x[0]) + '</div>' +
@@ -8113,7 +8139,7 @@
   route('/support/manuals/', std('使用手册', '五套手册。',
     V.hero('支持', '使用手册', '覆盖五条产品线的手册与参考。') +
     '<section class="section"><div class="grid-3">' +
-    [['SythonOS 使用手册', '安装、六层架构、246 个应用与 111 个 Sky* 套件用法。'],
+    [['SythonOS 使用手册', '安装、六层架构、246 个应用与 101 个 Sky* 套件用法。'],
      ['Fusion OS 使用手册', '四形态适配、智能体框架与桌面外壳。'],
      ['Hyper 接入文档', '云端 API 与本地部署；六档位与定价口径。'],
      ['Autopilot 验证台手册', '三套车辆体系、仿真频率与遥测口径。'],
